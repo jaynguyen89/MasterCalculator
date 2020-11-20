@@ -14,7 +14,7 @@ const ComplexButton = (props : IComplexButton) => {
                 <Text style={ styles.altText }>{ props.altText }</Text>
             </View>
             <Button title={ props.mainText as string } titleStyle={ styles.txtButton } buttonStyle={ sharedStyles.buttonLarger }
-                    onPress={() => console.log('some')} />
+                    onPress={() => console.log(props.mainText)} />
         </View>
     );
 }
