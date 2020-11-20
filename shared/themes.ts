@@ -1,3 +1,4 @@
+import { StyleSheet } from 'react-native';
 import palette from './palette';
 
 interface Theme {
@@ -26,10 +27,34 @@ const themes : Theme = {
     neutral : {
         borderColor : palette.dark_gray,
         alternateColor : palette.blue,
+        alternateLighter : palette.light_blue,
+        alternate : palette.alt_blue,
         shiftColor : palette.orange,
         featureColor : palette.green,
-        dangerColor : palette.red
+        dangerColor : palette.red,
+        warningColor : palette.pink
     }
 }
 
 export default themes;
+
+export const common = StyleSheet.create({
+    lightShadow : {
+        shadowColor : '#000',
+        shadowOffset : {
+            width : 0, height : 1
+        },
+        shadowOpacity : 0.8,
+        shadowRadius : 2.22,
+        elevation : 3
+    },
+    darkShadow : {
+        shadowColor : '#000',
+        shadowOffset : {
+            width : 0, height : 2
+        },
+        shadowOpacity : 0.8,
+        shadowRadius : 3.84,
+        elevation : 5
+    }
+});

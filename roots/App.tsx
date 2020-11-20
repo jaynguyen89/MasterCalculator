@@ -8,7 +8,9 @@ import { StatusBar } from 'react-native';
 
 //Add debugger: adb reverse tcp:9090 tcp:9090
 import('./debugger').then(() => console.log('Debugger is running.'));
+import { getAppSettings } from '../features/settings/redux/actions';
 
+store.dispatch(getAppSettings());
 const Stack = createStackNavigator();
 
 const App: () => React.ReactNode = () => {

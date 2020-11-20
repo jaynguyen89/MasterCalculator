@@ -1,34 +1,61 @@
 import SQLite from 'react-native-sqlite-storage';
+import { STORAGE_KEYS, THEMES } from '../shared/enums';
+import { AsyncStorage } from 'react-native';
 
 const connection = {
     database : SQLite.openDatabase({
-            name: 'calculator_db',
+            name: 'calculator_data',
             location: 'default',
-            createFromLocation: '~calculator_db.db',
+            createFromLocation: '~calculator_data.sqlite'
         },
-        () => {},
-        error => {
-            console.log(error);
-        })
+        () => console.log('Database connected successfully.'),
+        error => console.log(error)
+    )
 };
 
-export const insertData = (data : {} | [], table : string) => {
-
-};
-
-export const updateEntry = (data : {} | [], table : string) => {
+export const insertData = () => {
 
 };
 
-export const deleteEntry = (id : number, table : string) => {
+export const updateEntry = () => {
 
 };
 
-export const getEntry = (id : number, table : string) => {
+export const deleteEntry = () => {
 
 };
 
-export const getData = (table : string) : any[] => {
+export const getSettingsFromAsyncStorage = async (key : STORAGE_KEYS) : Promise<any> => {
+    let entry : any | null | undefined = null;
+    const setEntry = (val: any) => { entry = val; };
+    
+    try {
+        await AsyncStorage.getItem(`${ key }`)
+            .then(response => { return response; })
+            .then(data => { setEntry(data); });
+        
+        if (entry === null)
+            entry = {
+                theme : THEMES.DAY,
+                isPremium : false,
+                isFirstGroupUnlocked : false,
+                isSecondGroupUnlocked : false,
+                isThirdGroupUnlocked : false,
+                shouldHideAds : false,
+                premiumElapseTime : 0
+            };
+    } catch (e) {
+        console.log(e);
+    }
+    
+    return entry;
+};
+
+export const getEntry = () => {
+
+}
+
+export const getData = (table : any) : any[] => {
     let dbData: any[] = [];
     connection.database.transaction(tx => {
         tx.executeSql(
@@ -45,3 +72,14 @@ export const getData = (table : string) : any[] => {
 export const execute = (query : string) => {
 
 };
+
+const executeQuery = (query : string, params = []) => new Promise((resolve, reject) => {
+    connection.database.transaction(tx => {
+        tx.executeSql(
+            query,
+            params,
+            (tx, results) => resolve(results),
+            error => reject(error)
+        );
+    });
+});
