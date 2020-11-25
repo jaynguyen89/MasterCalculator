@@ -5,8 +5,7 @@ import { baseFontSize } from '../../../shared/typography';
 const styles = StyleSheet.create({
     calculationWrapper : {
         padding : 0,
-        height : 150,
-        flexDirection : 'column',
+        flex : 21,
         borderColor : themes.day.resultBackgroundColor,
         borderStyle : 'solid',
         borderWidth : 0.75,
@@ -16,16 +15,15 @@ const styles = StyleSheet.create({
         borderBottomWidth : 3
     },
     expressionWrapper : {
-        flex : 88,
+        flex : 89,
         flexDirection : 'column',
         backgroundColor : themes.day.backgroundColor
     },
     titleWrapper : {
-        flex : 12,
+        flex : 11,
         flexDirection : 'row',
         borderRadius : 4,
         backgroundColor : themes.day.resultBackgroundColor,
-        
     },
     featureLabel : {
         flex : 7,
@@ -43,7 +41,7 @@ const styles = StyleSheet.create({
         textAlign : 'center'
     },
     expression : {
-        flex : 7,
+        flex : 29,
         flexDirection : 'column',
         paddingTop : 2,
         paddingBottom : 2,
@@ -51,7 +49,7 @@ const styles = StyleSheet.create({
         backgroundColor : themes.day.expressionBackgroundColor
     },
     result : {
-        flex : 3,
+        flex : 11,
         flexDirection : 'column',
         paddingTop : 1,
         paddingBottom : 1,
@@ -70,8 +68,7 @@ const styles = StyleSheet.create({
         textAlign : 'right'
     },
     functionWrapper : {
-        height : 106,
-        flexDirection : 'column',
+        flex : 15,
         backgroundColor : themes.neutral.borderColor,
         borderStyle : 'solid',
         borderWidth : 1,
@@ -79,7 +76,7 @@ const styles = StyleSheet.create({
         marginBottom : 7
     },
     functionRowWrapper : {
-        height : 50,
+        flex: 1,
         flexDirection : 'row',
         marginTop : 2
     },
@@ -119,8 +116,7 @@ const styles = StyleSheet.create({
         paddingRight: 3
     },
     expressFunctionWrapper : {
-        height : 133,
-        flexDirection : 'column',
+        flex : 18,
         backgroundColor : themes.neutral.borderColor,
         borderStyle : 'solid',
         borderWidth : 1,
@@ -128,13 +124,12 @@ const styles = StyleSheet.create({
         marginBottom : 7
     },
     expressRowWrapper : {
-        height : 60,
+        flex : 1,
         flexDirection : 'row',
         marginTop : 2.5
     },
     numPadWrapper : {
-        height : 265,
-        flexDirection : 'column',
+        flex : 34,
         backgroundColor : themes.neutral.borderColor,
         borderStyle : 'solid',
         borderWidth : 1,
@@ -142,52 +137,23 @@ const styles = StyleSheet.create({
         paddingTop : 4
     },
     numRowWrapper : {
-        height : 62,
         flexDirection : 'row',
         marginTop : 2
     },
     lastRowWrapper : {
         flex : 4,
-        flexDirection : 'column',
         margin : 0,
-        padding : 0,
-        height : 125
+        padding : 0
     },
     equalSignWrapper : {
         flex : 1,
         flexDirection : 'column',
         margin : 0,
-        padding : 0,
-        height : 125
+        padding : 0
     },
     equalRowWrapper : {
-        height : 125,
         flexDirection : 'row',
         marginTop : 2
-    },
-    footer : {
-        flex : 1,
-        flexDirection : 'column',
-        paddingTop : 3
-    },
-    footerText : {
-        textAlign : 'center',
-        backgroundColor : themes.neutral.alternateColor,
-        color : themes.neutral.alternateLighter,
-        fontSize : baseFontSize * 2.5,
-        paddingBottom : 3,
-        borderTopLeftRadius : 4,
-        borderTopRightRadius : 4
-    },
-    adsArea : {
-        flex : 1,
-        flexDirection : 'column'
-    },
-    adsText : {
-        width : '100%',
-        height : 100,
-        textAlign : 'center',
-        backgroundColor : themes.neutral.warningColor
     }
 });
 

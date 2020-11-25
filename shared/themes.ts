@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import palette from './palette';
+import { baseFontSize } from './typography';
 
 interface Theme {
     [key : string] : {
@@ -56,5 +57,19 @@ export const common = StyleSheet.create({
         shadowOpacity : 0.8,
         shadowRadius : 3.84,
         elevation : 5
+    },
+    footer : {
+        flex : 12,
+        flexDirection : 'column',
+        paddingTop : 3
+    },
+    footerText : {
+        textAlign : 'center',
+        backgroundColor : themes.neutral.alternateColor,
+        color : themes.neutral.alternateLighter,
+        fontSize : baseFontSize * 2.5,
+        paddingBottom : 3,
+        borderTopLeftRadius : 4,
+        borderTopRightRadius : 4
     }
 });

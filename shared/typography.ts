@@ -1,6 +1,15 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Dimensions } from 'react-native';
 
-export const baseFontSize : number = 10;
+const {
+    width : SCREEN_WIDTH,
+    height : SCREEN_HEIGHT
+} = Dimensions.get('screen');
+
+const DEFAULT_WIDTH = 4320/11;
+const DEFAULT_HEIGHT = 8880/11;
+
+export const BASE_HEIGHT = 20 * SCREEN_HEIGHT / DEFAULT_HEIGHT;
+export const baseFontSize : number = 10 * SCREEN_WIDTH / DEFAULT_WIDTH;
 
 export const Typography = StyleSheet.create({
     firstHeader : {

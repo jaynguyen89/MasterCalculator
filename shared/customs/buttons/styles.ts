@@ -1,6 +1,6 @@
 import { StyleSheet } from 'react-native';
 import themes from '../../../shared/themes';
-import { baseFontSize } from '../../typography';
+import { BASE_HEIGHT, baseFontSize } from '../../typography';
 
 const styles = StyleSheet.create({
     complexBtnContainer : {
@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         margin : 4
     },
     functionalTextWrapper : {
-        height : 15,
+        height : 0.8 * BASE_HEIGHT,
         borderRadius : 3,
         flexDirection : 'row',
         padding : 1,
@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
         flexDirection : 'column',
         fontSize : baseFontSize,
         textAlignVertical : 'center',
-        lineHeight : 13,
+        lineHeight : 0.75 * BASE_HEIGHT,
         marginLeft : 4,
         color : themes.neutral.shiftColor
     },
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
         flex : 1,
         flexDirection : 'column',
         fontSize : baseFontSize * 1.2,
-        lineHeight : 13,
+        lineHeight : 0.75 * BASE_HEIGHT,
         textAlign : 'right',
         marginRight : 4,
         color : themes.neutral.alternateColor
