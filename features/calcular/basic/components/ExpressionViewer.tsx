@@ -4,6 +4,8 @@ import { Text, View } from 'react-native';
 import { common } from '../../../../shared/themes';
 import { Typography } from '../../../../shared/typography';
 
+const MathText = require('react-native-math');
+
 const ExpressionViewer = (props : any) => {
     
     return (
@@ -19,7 +21,13 @@ const ExpressionViewer = (props : any) => {
         
             <View style={[ styles.expressionWrapper, common.lightShadow ]}>
                 <View style={ styles.expression }>
-                    <Text style={ styles.expressionText }>12345.67 x 432.1 + 9876.54</Text>
+                    <Text style={ styles.expressionText }>
+                        <MathText
+                            value={`$x=\\frac{1+y}{1+2z^2}$`}
+                            style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+                        />
+                        12345.67 x 432.1 + 9876.54
+                    </Text>
                 </View>
                 <View style={ styles.result }>
                     <Text style={ styles.resultText }>5 344 440.547</Text>
